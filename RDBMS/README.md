@@ -158,7 +158,9 @@ Foreign-key constraints:
 
 --If you look closely you will see the "Foreign-key constraints:" section here
 
--- In the above example more_info table is our secondary table which consists records about every username from the character table and both the tables have a common column which is our character_id column which is the primary key in characters table and the same column is acting as foreign key in out more_info table
+-- In the above example more_info table is our secondary table which consists records about every username from the 
+-- character table and both the tables have a common column which is our character_id column which is the primary key 
+-- in characters table and the same column is acting as foreign key in out more_info table
 ```
 
 ### 15) To add unique constraint to an existing column
