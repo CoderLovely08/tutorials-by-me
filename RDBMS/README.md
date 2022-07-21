@@ -119,6 +119,11 @@ INSERT INTO table_name(column1,column2,... column k) VALUES(value1,value2,... va
 EX: 
 ```
 
+### 15) To modify a column datatype
+```sql
+ALTER TABLE table_name ALTER COLUMN column_name type datatype;
+```
+
 ### 14) Table referencing
 ```sql
 ALTER TABLE table_name ADD COLUMN column_name DATATYPE REFERENCES referenced_table_name(referenced_column_name);
@@ -173,4 +178,100 @@ EX: Alter table more_info add unique(character_id);
 ```sql
 ALTER TABLE table_name ALTER COLUMN column_name SET NOT NULL;
 EX: alter table more_info alter column character_id set not null;
+```
+
+```sql
+mario_database=> \d more_info
+mario_database=>                      Table "public.more_info"
++--------------+--------------+-----------+----------+-------------------------------------------------+
+|    Column    |     Type     | Collation | Nullable |                     Default                     |
++--------------+--------------+-----------+----------+-------------------------------------------------+
+| more_info_id | integer      |           | not null | nextval('more_info_more_info_id_seq'::regclass) |
+| birthday     | date         |           |          |                                                 |
+| height       | integer      |           |          |                                                 |
+| weight       | numeric(4,1) |           |          |                                                 |
+| character_id | integer      |           | not null |                                                 |
++--------------+--------------+-----------+----------+-------------------------------------------------+
+
+
+insert into more_info(birthday,height,weight,character_id) values('1981-07-09',155,64.5,1);
+
+mario_database=> select * from more_info;
+                               
++--------------+------------+--------+--------+--------------+
+| more_info_id |  birthday  | height | weight | character_id |
++--------------+------------+--------+--------+--------------+
+|            1 | 1981-07-09 |    155 |   64.5 |            1 |
++--------------+------------+--------+--------+--------------+
+
+
+
+
+
+mario_database=> select * from more_info;
+                               
++--------------+------------+--------+--------+--------------+
+| more_info_id |  birthday  | height | weight | character_id |
++--------------+------------+--------+--------+--------------+
+|            1 | 1981-07-09 |    155 |   64.5 |            1 |
+|            2 | 1983-07-14 |    175 |   48.8 |            2 |
+|            3 | 1985-10-18 |    173 |   52.2 |            3 |
+|            5 | 1950-01-10 |     66 |   35.6 |            4 |
++--------------+------------+--------+--------+--------------+
+
+alter table more_info rename column height to height_in_cm;
+
+alter table more_info rename column weight_in_kg1 to weight_in_kg;
+
+-- to apply foreign key constraint to an existing column
+ALTER TABLE table_name ADD FOREIGN KEY(column_name) REFERENCES referenced_table(referenced_column);
+
+-- composite primary key
+-- the purpose is simple  table will have multiple rows with the same column1, and multiple rows the same column2.
+-- So neither of them are unique. But you will never have the same column1 and column2 in a single row.
+-- So the two columns together can be used to uniquely identify each row. 
+ALTER TABLE table_name ADD PRIMARY KEY(column1, column2);
+
+# Joins
+-- 1) Full Join
+SELECT columns FROM table_1 FULL JOIN table_2 ON table_1.primary_key_column = table_2.foreign_key_column;
+-- this can be used to display everything that is common (more like a union)
+
+
+-----------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------
+select * from characters;
+                               
++--------------+--------+------------------+----------------+
+| character_id |  name  |     homeland     | favorite_color |
++--------------+--------+------------------+----------------+
+|            2 | Luigi  | Mushroom Kingdom | Green          |
+|            3 | Peach  | Mushroom Kingdom | Pink           |
+|            7 | Yoshi  | Dinosaur Land    | Green          |
+|            6 | Daisy  | Sarasaland       | Orange         |
+|            1 | Mario  | Mushroom Kingdom | Red            |
+|            4 | Toad   | Mushroom Kingdom | Blue           |
+|            5 | Bowser | Koopa Kingdom    | Yellow         |
++--------------+--------+------------------+----------------+
+
+
+mario_database=> select * from more_info;
+                                     
++--------------+------------+--------------+--------------+--------------+
+| more_info_id |  birthday  | height_in_cm | weight_in_kg | character_id |
++--------------+------------+--------------+--------------+--------------+
+|            1 | 1981-07-09 |          155 |         64.5 |            1 |
+|            2 | 1983-07-14 |          175 |         48.8 |            2 |
+|            3 | 1985-10-18 |          173 |         52.2 |            3 |
+|            4 | 1950-01-10 |           66 |         35.6 |            4 |
+|            5 | 1990-10-29 |          258 |        300.0 |            5 |
+|            6 | 1989-07-31 |              |              |            6 |
+|            7 | 1990-04-13 |          162 |         59.1 |            7 |
++--------------+------------+--------------+--------------+--------------+
+
+-----------------------------------------------------------------------------------------------------
+Ex: select * from characters full join more_info on characters.character_id=more_info.character_id;
+
+select * from characters full join character_actions on character_actions.character_id = characters.character_id full join actions on character_actions.action_id=actions.action_id;
+-----------------------------------------------------------------------------------------------------
 ```

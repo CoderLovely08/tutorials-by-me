@@ -1,0 +1,123 @@
+alter table galaxy add column galaxy_name varchar(30);
+alter table star add column star_name varchar(30);
+alter table planet add column planet_name varchar(30);
+alter table moon add column moon_name varchar(30);
+
+alter table galaxy drop column galaxy_name;
+alter table star drop column star_name;
+alter table planet drop column planet_name;
+alter table moon drop column moon_name;
+
+alter table galaxy add column name varchar(30);
+alter table star add column name varchar(30);
+alter table planet add column name varchar(30);
+alter table moon add column name varchar(30);
+
+
+alter table galaxy add column total_planets int;
+alter table galaxy add column distance_from_other_galaxy int;
+
+alter table galaxy add column galaxy_description text;
+
+alter table planet add column isSpherical boolean;
+
+insert into galaxy(name,total_planets,distance_from_other_galaxy,age_in_million_of_years,galaxy_description) values('galaxy1',i,i*100,i*1.1,'galaxy{i} is amazing');
+
+
+
+insert into galaxy(name,total_planets,distance_from_other_galaxy,age_in_million_of_years,galaxy_description) values('galaxy1',1,100,10,'galaxy1 is amazing');insert into galaxy(name,total_planets,distance_from_other_galaxy,age_in_million_of_years,galaxy_description) values('galaxy1',2,200,20,'galaxy2 is amazing');insert into galaxy(name,total_planets,distance_from_other_galaxy,age_in_million_of_years,galaxy_description) values('galaxy1',3,300,30,'galaxy3 is amazing');insert into galaxy(name,total_planets,distance_from_other_galaxy,age_in_million_of_years,galaxy_description) values('galaxy1',4,400,40,'galaxy4 is amazing');insert into galaxy(name,total_planets,distance_from_other_galaxy,age_in_million_of_years,galaxy_description) values('galaxy1',5,500,50,'galaxy5 is amazing');insert into galaxy(name,total_planets,distance_from_other_galaxy,age_in_million_of_years,galaxy_description) values('galaxy1',6,600,60,'galaxy6 is amazing');insert into galaxy(name,total_planets,distance_from_other_galaxy,age_in_million_of_years,galaxy_description) values('galaxy1',7,700,70,'galaxy7 is amazing');insert into galaxy(name,total_planets,distance_from_other_galaxy,age_in_million_of_years,galaxy_description) values('galaxy1',8,800,80,'galaxy8 is amazing');insert into galaxy(name,total_planets,distance_from_other_galaxy,age_in_million_of_years,galaxy_description) values('galaxy1',9,900,90,'galaxy9 is amazing');insert into galaxy(name,total_planets,distance_from_other_galaxy,age_in_million_of_years,galaxy_description) values('galaxy1',10,1000,100,'galaxy10 is amazing');
+
+insert into galaxy(name,total_planets,distance_from_other_galaxy,age_in_million_of_years,galaxy_description) values('galaxy1',1,100,10.1,'galaxy1 is amazing');
+insert into galaxy(name,total_planets,distance_from_other_galaxy,age_in_million_of_years,galaxy_description) values('galaxy1',2,200,20.1,'galaxy2 is amazing');
+insert into galaxy(name,total_planets,distance_from_other_galaxy,age_in_million_of_years,galaxy_description) values('galaxy1',3,300,30.1,'galaxy3 is amazing');
+insert into galaxy(name,total_planets,distance_from_other_galaxy,age_in_million_of_years,galaxy_description) values('galaxy1',4,400,40.1,'galaxy4 is amazing');
+insert into galaxy(name,total_planets,distance_from_other_galaxy,age_in_million_of_years,galaxy_description) values('galaxy1',5,500,50.1,'galaxy5 is amazing');
+insert into galaxy(name,total_planets,distance_from_other_galaxy,age_in_million_of_years,galaxy_description) values('galaxy1',6,600,60.1,'galaxy6 is amazing');
+insert into galaxy(name,total_planets,distance_from_other_galaxy,age_in_million_of_years,galaxy_description) values('galaxy1',7,700,70.1,'galaxy7 is amazing');
+insert into galaxy(name,total_planets,distance_from_other_galaxy,age_in_million_of_years,galaxy_description) values('galaxy8',8,800,80.1,'galaxy8 is amazing');
+insert into galaxy(name,total_planets,distance_from_other_galaxy,age_in_million_of_years,galaxy_description) values('galaxy9',9,900,90.1,'galaxy9 is amazing');
+insert into galaxy(name,total_planets,distance_from_other_galaxy,age_in_million_of_years,galaxy_description) values('galaxy10',10,1000,100.1,'galaxy10 is amazing');
+
+
+
+
+
+update galaxy set name = 'galaxy1' where galaxy_id=1;
+update galaxy set name = 'galaxy2' where galaxy_id=2;
+update galaxy set name = 'galaxy3' where galaxy_id=3;
+update galaxy set name = 'galaxy4' where galaxy_id=4;
+update galaxy set name = 'galaxy5' where galaxy_id=5;
+update galaxy set name = 'galaxy6' where galaxy_id=6;
+update galaxy set name = 'galaxy7' where galaxy_id=7;
+update galaxy set name = 'galaxy8' where galaxy_id=8;
+update galaxy set name = 'galaxy9' where galaxy_id=9;
+update galaxy set name = 'galaxy10' where galaxy_id=10;
+
+
+
+alter table star add column star_age int;
+alter table star add column star_descripion int;
+alter table planet add column planet_age int;
+alter table planet add column planet_descripion int;
+alter table moon add column moon_age int;
+alter table moon add column moon_descripion int;
+
+insert into star(name,galaxy_id,star_age,star_description) values('star1',1,10,'star1 is amazing');
+
+insert into star(name,galaxy_id,star_age,star_description) values('star1',1,10,'star1 is amazing');
+insert into star(name,galaxy_id,star_age,star_description) values('star2',2,20,'star2 is amazing');
+insert into star(name,galaxy_id,star_age,star_description) values('star3',3,30,'star3 is amazing');
+insert into star(name,galaxy_id,star_age,star_description) values('star4',4,40,'star4 is amazing');
+insert into star(name,galaxy_id,star_age,star_description) values('star5',5,50,'star5 is amazing');
+insert into star(name,galaxy_id,star_age,star_description) values('star6',6,60,'star6 is amazing');
+insert into star(name,galaxy_id,star_age,star_description) values('star7',7,70,'star7 is amazing');
+insert into star(name,galaxy_id,star_age,star_description) values('star8',8,80,'star8 is amazing');
+insert into star(name,galaxy_id,star_age,star_description) values('star9',9,90,'star9 is amazing');
+insert into star(name,galaxy_id,star_age,star_description) values('star10',10,100,'star10 is amazing');
+
+
+insert into star(name,isSpherical,hasLife,planet_age,planet_description,star_id) values('{tableName}{i}',True,True,{i*10},'{tableName}{i} is amazing',{star_id});
+
+
+
+
+insert into planet(name,isSpherical,hasLife,planet_age,planet_description,star_id) values('planet1',False,False,10,'planet1 is amazing',1);
+insert into planet(name,isSpherical,hasLife,planet_age,planet_description,star_id) values('planet2',True,True,20,'planet2 is amazing',2);
+insert into planet(name,isSpherical,hasLife,planet_age,planet_description,star_id) values('planet3',False,False,30,'planet3 is amazing',3);
+insert into planet(name,isSpherical,hasLife,planet_age,planet_description,star_id) values('planet4',True,True,40,'planet4 is amazing',4);
+insert into planet(name,isSpherical,hasLife,planet_age,planet_description,star_id) values('planet5',False,False,50,'planet5 is amazing',5);
+insert into planet(name,isSpherical,hasLife,planet_age,planet_description,star_id) values('planet6',True,True,60,'planet6 is amazing',6);
+insert into planet(name,isSpherical,hasLife,planet_age,planet_description,star_id) values('planet7',False,False,70,'planet7 is amazing',7);
+insert into planet(name,isSpherical,hasLife,planet_age,planet_description,star_id) values('planet8',True,True,80,'planet8 is amazing',8);
+insert into planet(name,isSpherical,hasLife,planet_age,planet_description,star_id) values('planet9',False,False,90,'planet9 is amazing',9);
+insert into planet(name,isSpherical,hasLife,planet_age,planet_description,star_id) values('planet10',True,True,100,'planet10 is amazing',10);
+insert into planet(name,isSpherical,hasLife,planet_age,planet_description,star_id) values('planet11',False,False,110,'planet11 is amazing',1);
+insert into planet(name,isSpherical,hasLife,planet_age,planet_description,star_id) values('planet12',True,True,120,'planet12 is amazing',1);
+insert into planet(name,isSpherical,hasLife,planet_age,planet_description,star_id) values('planet13',False,False,130,'planet13 is amazing',2);
+insert into planet(name,isSpherical,hasLife,planet_age,planet_description,star_id) values('planet14',True,True,140,'planet14 is amazing',3);
+
+insert into moon(name,moon_age,moon_description,planet_id) values('moon1',{i*10},'moon1 is amazing',1);
+
+
+
+
+
+insert into moon(name,moon_age,moon_description,planet_id) values('moon2',20,'moon2 is amazing',2);
+insert into moon(name,moon_age,moon_description,planet_id) values('moon3',30,'moon3 is amazing',3);
+insert into moon(name,moon_age,moon_description,planet_id) values('moon4',40,'moon4 is amazing',4);
+insert into moon(name,moon_age,moon_description,planet_id) values('moon5',50,'moon5 is amazing',5);
+insert into moon(name,moon_age,moon_description,planet_id) values('moon6',60,'moon6 is amazing',6);
+insert into moon(name,moon_age,moon_description,planet_id) values('moon7',70,'moon7 is amazing',7);
+insert into moon(name,moon_age,moon_description,planet_id) values('moon8',80,'moon8 is amazing',8);
+insert into moon(name,moon_age,moon_description,planet_id) values('moon9',90,'moon9 is amazing',9);
+insert into moon(name,moon_age,moon_description,planet_id) values('moon10',100,'moon10 is amazing',10);
+insert into moon(name,moon_age,moon_description,planet_id) values('moon11',110,'moon11 is amazing',11);
+insert into moon(name,moon_age,moon_description,planet_id) values('moon12',120,'moon12 is amazing',12);
+insert into moon(name,moon_age,moon_description,planet_id) values('moon13',130,'moon13 is amazing',13);
+insert into moon(name,moon_age,moon_description,planet_id) values('moon14',140,'moon14 is amazing',14);
+insert into moon(name,moon_age,moon_description,planet_id) values('moon15',150,'moon15 is amazing',1);
+insert into moon(name,moon_age,moon_description,planet_id) values('moon16',160,'moon16 is amazing',1);
+insert into moon(name,moon_age,moon_description,planet_id) values('moon17',170,'moon17 is amazing',2);
+insert into moon(name,moon_age,moon_description,planet_id) values('moon18',180,'moon18 is amazing',3);
+insert into moon(name,moon_age,moon_description,planet_id) values('moon19',190,'moon19 is amazing',4);
+insert into moon(name,moon_age,moon_description,planet_id) values('moon20',200,'moon20 is amazing',5);
