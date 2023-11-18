@@ -79,8 +79,8 @@ export const MuiButton = () => {
 ### 3) Stack
 
 This is used to group together the elements and place them equally
-spacing - it defines the space between each element
-direction - in which direction the items should be laid
+- spacing - it defines the space between each element
+- direction - in which direction the items should be laid
 
 ```jsx
 import { Stack, Button } from "@mui/material";
