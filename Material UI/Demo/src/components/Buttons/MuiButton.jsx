@@ -1,16 +1,18 @@
-import { Button } from "@mui/material";
+import { Stack, Button } from "@mui/material";
 export const MuiButton = () => {
   return (
     <>
-      <Button sx={{ m: 1 }} variant="text">
-        Text
-      </Button>
-      <Button sx={{ m: 1 }} variant="contained">
-        Contained
-      </Button>
-      <Button sx={{ m: 1 }} variant="outlined">
-        Outlined
-      </Button>
+      <Stack spacing={2} direction="row-reverse">
+        <Button variant="text">
+          Text
+        </Button>
+        <Button variant="contained">
+          Contained
+        </Button>
+        <Button variant="outlined">
+          Outlined
+        </Button>
+      </Stack>
     </>
   );
 };

@@ -75,3 +75,24 @@ export const MuiButton = () => {
   );
 };
 ```
+
+### 3) Stack
+
+This is used to group together the elements and place them equally
+spacing - it defines the space between each element
+direction - in which direction the items should be laid
+
+```jsx
+import { Stack, Button } from "@mui/material";
+export const MuiButton = () => {
+  return (
+    <>
+      <Stack spacing={2} direction="row-reverse">
+        <Button variant="text">Text</Button>
+        <Button variant="contained">Contained</Button>
+        <Button variant="outlined">Outlined</Button>
+      </Stack>
+    </>
+  );
+};
+```
