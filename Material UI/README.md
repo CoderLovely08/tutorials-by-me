@@ -13,6 +13,7 @@ This component is for the text, use variant attribute to switch between differnt
 - body1, body2 for paragraphs
 
 To add bottom margin use **gutterBottom** attribute
+
 ```jsx
 import { Typography } from "@mui/material";
 
@@ -43,6 +44,33 @@ export const MuiTypography = () => {
         commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
         velit esse cillum dolore eu fugiat nulla pariatur.
       </Typography>
+    </>
+  );
+};
+```
+
+### 2) Buttons
+
+This component is for the buttons, use variant attribute to switch between differnt type of button types available.
+
+- text - basic type
+- contained - standard clickable type (Primary actions)
+- outliend - just like bootstrap outlined button (Secondary actions)
+
+```jsx
+import { Button } from "@mui/material";
+export const MuiButton = () => {
+  return (
+    <>
+      <Button sx={{ m: 1 }} variant="text">
+        Text
+      </Button>
+      <Button sx={{ m: 1 }} variant="contained">
+        Contained
+      </Button>
+      <Button sx={{ m: 1 }} variant="outlined">
+        Outlined
+      </Button>
     </>
   );
 };
