@@ -53,9 +53,26 @@ export const MuiTypography = () => {
 
 This component is for the buttons, use variant attribute to switch between differnt type of button types available.
 
-- text - basic type
-- contained - standard clickable type (Primary actions)
-- outliend - just like bootstrap outlined button (Secondary actions)
+- Attributes
+
+  - variant - to define the type of button
+  - href - to make it an anchor tag
+
+- Variants
+
+  - text - basic type
+  - contained - standard clickable type (Primary actions)
+  - outliend - just like bootstrap outlined button (Secondary actions)
+
+- Colors
+  - primary
+  - secondary
+  - warning
+  - success
+  - error
+  - info
+
+- Sizes
 
 ```jsx
 import { Button } from "@mui/material";
@@ -65,7 +82,7 @@ export const MuiButton = () => {
       <Button sx={{ m: 1 }} variant="text">
         Text
       </Button>
-      <Button sx={{ m: 1 }} variant="contained">
+      <Button sx={{ m: 1 }} variant="contained" color="primary">
         Contained
       </Button>
       <Button sx={{ m: 1 }} variant="outlined">
@@ -79,6 +96,7 @@ export const MuiButton = () => {
 ### 3) Stack
 
 This is used to group together the elements and place them equally
+
 - spacing - it defines the space between each element
 - direction - in which direction the items should be laid
 
