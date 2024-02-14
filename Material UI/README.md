@@ -65,6 +65,7 @@ This component is for the buttons, use variant attribute to switch between diffe
   - outliend - just like bootstrap outlined button (Secondary actions)
 
 - Colors
+
   - primary
   - secondary
   - warning
@@ -73,6 +74,9 @@ This component is for the buttons, use variant attribute to switch between diffe
   - info
 
 - Sizes
+  - Small
+  - Medium
+  - Large
 
 ```jsx
 import { Button } from "@mui/material";
@@ -88,6 +92,13 @@ export const MuiButton = () => {
       <Button sx={{ m: 1 }} variant="outlined">
         Outlined
       </Button>
+
+      {/* Sizes */}
+      <Stack display="block" spacing={3} direction="row">
+        <Button variant="contained" size="small">Small</Button>
+        <Button variant="contained" size="medium">Medium</Button>
+        <Button variant="contained" size="large">Large</Button>
+      </Stack>
     </>
   );
 };
